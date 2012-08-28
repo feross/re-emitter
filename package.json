@@ -1,0 +1,31 @@
+{
+  "name": "re-emitter",
+  "version": "0.0.1",
+  "description": "Re emit events from another emitter",
+  "keywords": [],
+  "author": "Raynos <raynos2@gmail.com>",
+  "repository": "git://github.com/Raynos/re-emitter.git",
+  "main": "index",
+  "homepage": "https://github.com/Raynos/re-emitter",
+  "contributors": [
+    {
+      "name": "Jake Verbaten"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Raynos/re-emitter/issues",
+    "email": "raynos2@gmail.com"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/Raynos/re-emitter/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {
+  }
+}
