@@ -1,6 +1,8 @@
 var slice = Array.prototype.slice
     , EventEmitter = require("events").EventEmitter
 
+ReEmitter.reemit = reemit
+
 module.exports = ReEmitter
 
 function ReEmitter(other, list) {
