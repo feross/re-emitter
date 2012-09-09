@@ -8,23 +8,27 @@ module.exports = ReEmitter
 function ReEmitter(other, list) {
     var emitter = new EventEmitter()
 
-    list.forEach(reemit, {
-        emitter: emitter
-        , other: other
-    })
+    reemit(other, emitter, list)
 
     return emitter
 }
 
-function reemit(name) {
-    var emitter = this.emitter
-        , other = this.other
+function reemit(source, target, events) {
+    events.forEach(proxyEvent, {
+        source: source
+        , target: target
+    })
+}
 
-    other.on(name, emit)
+function proxyEvent(eventName) {
+    var source = this.source
+        , target = this.target
 
-    function emit() {
-        var args = slice.call(arguments)
-        args.unshift(name)
-        emitter.emit.apply(emitter, args)
+    source.on(eventName, propagate)
+
+    function propagate() {
+        var args = [].slice.call(arguments)
+        args.unshift(eventName)
+        target.emit.apply(target, args)
     }
 }
