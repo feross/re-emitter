@@ -1,7 +1,7 @@
 {
   "name": "re-emitter",
   "description": "Re emit events from another emitter",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "author": "Raynos <raynos2@gmail.com>",
   "bugs": {
     "url": "https://github.com/feross/re-emitter/issues",
