@@ -1,6 +1,10 @@
 # re-emitter [![travis](https://img.shields.io/travis/feross/re-emitter.svg)](https://travis-ci.org/feross/re-emitter) [![npm](https://img.shields.io/npm/v/re-emitter.svg)](https://npmjs.org/package/re-emitter) [![downloads](https://img.shields.io/npm/dm/re-emitter.svg)](https://npmjs.org/package/re-emitter)
 
-### Re emit events from another emitter
+#### Re emit events from another emitter
+
+![reemit](https://raw.githubusercontent.com/feross/re-emitter/master/img.jpg)
+
+[![browser support](https://ci.testling.com/feross/re-emitter.png)](https://ci.testling.com/feross/re-emitter)
 
 ### install
 
