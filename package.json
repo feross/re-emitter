@@ -19,19 +19,17 @@
   "devDependencies": {
     "tape": "^2.13.4"
   },
-  "dependencies": {
-    "to-array": "~0.1.3"
-  },
-  "devDependencies": {},
   "homepage": "https://github.com/feross/re-emitter",
   "keywords": [],
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/Raynos/re-emitter/raw/master/LICENSE"
+      "url": "http://github.com/feross/re-emitter/raw/master/LICENSE"
     }
   ],
-  "scripts": {}
   "main": "index.js",
   "repository": "git://github.com/feross/re-emitter.git",
+  "scripts": {
+    "test": "tape test/*.js"
+  }
 }
