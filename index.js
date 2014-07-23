@@ -1,15 +1,22 @@
-var slice = Array.prototype.slice
-    , EventEmitter = require("events").EventEmitter
-    , reemit = require("./reemit")
+module.exports = reemit
+module.exports.filter = filter
 
-ReEmitter.reemit = reemit
+var EventEmitter = require('events').EventEmitter
 
-module.exports = ReEmitter
+function reemit (source, target, events) {
+  if (!Array.isArray(events)) events = [ events ]
 
-function ReEmitter(other, list) {
-    var emitter = new EventEmitter()
+  events.forEach(function (event) {
+    source.on(event, function () {
+      var args = [].slice.call(arguments)
+      args.unshift(event)
+      target.emit.apply(target, args)
+    })
+  })
+}
 
-    reemit(other, emitter, list)
-
-    return emitter
+function filter (source, events) {
+  var emitter = new EventEmitter()
+  reemit(source, emitter, events)
+  return emitter
 }
