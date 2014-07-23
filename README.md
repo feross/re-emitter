@@ -1,39 +1,45 @@
-# re-emitter
+# re-emitter [![travis](https://img.shields.io/travis/feross/re-emitter.svg)](https://travis-ci.org/feross/re-emitter) [![npm](https://img.shields.io/npm/v/re-emitter.svg)](https://npmjs.org/package/re-emitter) [![downloads](https://img.shields.io/npm/dm/re-emitter.svg)](https://npmjs.org/package/re-emitter)
 
-Re emit events from another emitter
+### Re emit events from another emitter
 
-## Example
+### install
 
-``` js
-var EventEmitter = require("events").EventEmitter
-    , ReEmitter = require("re-emitter")
-
-var emitter = new EventEmitter()
-    , other = ReEmitter(emitter, ["foo", "bar"])
-
-other.on("foo", function () {
-    console.log("fired")
-})
-
-other.on("baz", function () {
-    console.log("should not fire")
-})
-
-emitter.on("bar", function () {
-    console.log("should not fire")
-})
-
-emitter.emit("foo")
-emitter.emit("baz")
-other.emit("bar")
+```
+npm install re-emitter
 ```
 
-## Installation
+### usage
 
-`npm install re-emitter`
+```js
+var emitter = new EventEmitter()
+var other = new EventEmitter()
 
-## Contributors
+reemit(emitter, other, ['foo', 'bar'])
 
- - Raynos
+other.on('foo', function () {
+  t.pass('foo fired')
+})
 
-## MIT Licenced
+emitter.emit('foo')
+
+other.on('baz', function () {
+  t.fail('baz should not fire on other emitter')
+})
+
+emitter.emit('baz')
+
+emitter.on('bar', function () {
+  t.fail('bar should not fire on original emitter')
+})
+
+other.emit('bar')
+```
+
+### contributors
+
+- Raynos
+- Feross
+
+### license
+
+MIT. Copyright (c) Raynos.
