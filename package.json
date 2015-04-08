@@ -12,12 +12,16 @@
       "name": "Jake Verbaten"
     },
     {
-      "name": "Feross Aboukhadijeh"
+      "name": "Feross Aboukhadijeh",
+      "email": "feross@feross.org",
+      "url": "http://feross.org/"
     }
   ],
   "dependencies": {},
   "devDependencies": {
-    "tape": "^2.13.4"
+    "standard": "^3.3.2",
+    "tape": "^2.13.4",
+    "zuul": "^2.1.1"
   },
   "homepage": "https://github.com/feross/re-emitter",
   "keywords": [
@@ -29,31 +33,13 @@
     "events",
     "emitter"
   ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/feross/re-emitter/raw/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "main": "index.js",
   "repository": "git://github.com/feross/re-emitter.git",
   "scripts": {
-    "test": "tape test/*.js"
-  },
-  "testling": {
-    "files": "test/*.js",
-    "browsers": [
-      "ie/9..latest",
-      "chrome/25..latest",
-      "chrome/canary",
-      "firefox/20..latest",
-      "firefox/nightly",
-      "safari/6..latest",
-      "opera/15.0..latest",
-      "opera/next",
-      "ipad/6.0..latest",
-      "iphone/6.0..latest",
-      "android-browser/4.2..latest"
-    ]
+    "test": "standard && npm run test-node && npm run test-browser",
+    "test-browser": "zuul -- test/*.js",
+    "test-browser-local": "zuul --local -- test/*.js",
+    "test-node": "tape test/*.js"
   }
 }

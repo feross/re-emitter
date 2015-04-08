@@ -4,7 +4,11 @@
 
 ![reemit](https://raw.githubusercontent.com/feross/re-emitter/master/img.jpg)
 
-[![browser support](https://ci.testling.com/feross/re-emitter.png)](https://ci.testling.com/feross/re-emitter)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/magnet-uri.svg)](https://saucelabs.com/u/magnet-uri)
+
+Works in node and the browser with [browserify](http://browserify.org/).
+
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ### install
 
