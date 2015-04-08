@@ -15,6 +15,8 @@ npm install re-emitter
 ### usage
 
 ```js
+var reemit = require('re-emitter')
+
 var emitter = new EventEmitter()
 var other = new EventEmitter()
 
@@ -32,6 +34,11 @@ other.on('baz', function () {
 
 emitter.emit('baz')
 ```
+
+#### canceling re-emitting
+
+`reemit` returns a `function`, which when called, cancels all re-emitting by removing the
+event listeners which it added.
 
 ### contributors
 

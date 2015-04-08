@@ -28,6 +28,29 @@ test('Re-emit events from another emitter', function (t) {
   other.emit('bar')
 })
 
+test('Cancel reemitting at some point in the future', function (t) {
+  t.plan(2)
+  var emitter = new EventEmitter()
+  var other = new EventEmitter()
+
+  var cancel = reemit(emitter, other, ['foo', 'bar'])
+
+  other.on('foo', function () {
+    t.pass('foo fired')
+  })
+
+  // these should fire
+  emitter.emit('foo')
+  emitter.emit('foo')
+
+  cancel()
+
+  // none of these should fire
+  emitter.emit('foo')
+  emitter.emit('foo')
+  emitter.emit('foo')
+})
+
 test('Re-emit events from another emitter with arguments', function (t) {
   t.plan(4)
   var emitter = new EventEmitter()
