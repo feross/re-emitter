@@ -1,4 +1,13 @@
-# re-emitter [![travis](https://img.shields.io/travis/feross/re-emitter/master.svg)](https://travis-ci.org/feross/re-emitter) [![npm](https://img.shields.io/npm/v/re-emitter.svg)](https://npmjs.org/package/re-emitter) [![downloads](https://img.shields.io/npm/dm/re-emitter.svg)](https://npmjs.org/package/re-emitter)
+# re-emitter [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
+
+[travis-image]: https://img.shields.io/travis/feross/re-emitter/master.svg
+[travis-url]: https://travis-ci.org/feross/re-emitter
+[npm-image]: https://img.shields.io/npm/v/re-emitter.svg
+[npm-url]: https://npmjs.org/package/re-emitter
+[downloads-image]: https://img.shields.io/npm/dm/re-emitter.svg
+[downloads-url]: https://npmjs.org/package/re-emitter
+[standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
+[standard-url]: https://standardjs.com
 
 #### Re emit events from another emitter
 
