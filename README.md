@@ -1,5 +1,7 @@
 # re-emitter [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/feross/re-emitter.svg)](https://greenkeeper.io/)
+
 [travis-image]: https://img.shields.io/travis/feross/re-emitter/master.svg
 [travis-url]: https://travis-ci.org/feross/re-emitter
 [npm-image]: https://img.shields.io/npm/v/re-emitter.svg
