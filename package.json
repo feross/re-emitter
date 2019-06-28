@@ -20,8 +20,7 @@
   "dependencies": {},
   "devDependencies": {
     "standard": "*",
-    "tape": "^4.0.0",
-    "zuul": "^3.0.0"
+    "tape": "^4.0.0"
   },
   "homepage": "https://github.com/feross/re-emitter",
   "keywords": [
@@ -37,9 +36,6 @@
   "main": "index.js",
   "repository": "git://github.com/feross/re-emitter.git",
   "scripts": {
-    "test": "standard && npm run test-node && npm run test-browser",
-    "test-browser": "zuul -- test/*.js",
-    "test-browser-local": "zuul --local -- test/*.js",
-    "test-node": "tape test/*.js"
+    "test": "standard && tape test/*.js"
   }
 }
