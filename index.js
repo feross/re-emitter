@@ -4,7 +4,7 @@ module.exports.filter = filter
 var EventEmitter = require('events').EventEmitter
 
 function reemit (source, target, events) {
-  if (!Array.isArray(events)) events = [ events ]
+  if (!Array.isArray(events)) events = [events]
 
   var listeners = []
   events.forEach(function (event) {
