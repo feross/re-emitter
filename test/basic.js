@@ -1,11 +1,11 @@
-var EventEmitter = require('events').EventEmitter
-var reemit = require('../')
-var test = require('tape')
+const EventEmitter = require('events').EventEmitter
+const reemit = require('../')
+const test = require('tape')
 
 test('Re-emit events from another emitter', function (t) {
   t.plan(1)
-  var emitter = new EventEmitter()
-  var other = new EventEmitter()
+  const emitter = new EventEmitter()
+  const other = new EventEmitter()
 
   reemit(emitter, other, ['foo', 'bar'])
 
@@ -30,10 +30,10 @@ test('Re-emit events from another emitter', function (t) {
 
 test('Cancel reemitting at some point in the future', function (t) {
   t.plan(2)
-  var emitter = new EventEmitter()
-  var other = new EventEmitter()
+  const emitter = new EventEmitter()
+  const other = new EventEmitter()
 
-  var cancel = reemit(emitter, other, ['foo', 'bar'])
+  const cancel = reemit(emitter, other, ['foo', 'bar'])
 
   other.on('foo', function () {
     t.pass('foo fired')
@@ -53,8 +53,8 @@ test('Cancel reemitting at some point in the future', function (t) {
 
 test('Re-emit events from another emitter with arguments', function (t) {
   t.plan(4)
-  var emitter = new EventEmitter()
-  var other = new EventEmitter()
+  const emitter = new EventEmitter()
+  const other = new EventEmitter()
 
   reemit(emitter, other, ['foo', 'bar'])
 
@@ -70,8 +70,8 @@ test('Re-emit events from another emitter with arguments', function (t) {
 
 test('Filter events from another emitter', function (t) {
   t.plan(1)
-  var emitter = new EventEmitter()
-  var other = reemit.filter(emitter, ['foo', 'bar'])
+  const emitter = new EventEmitter()
+  const other = reemit.filter(emitter, ['foo', 'bar'])
 
   other.on('foo', function () {
     t.pass('foo fired')

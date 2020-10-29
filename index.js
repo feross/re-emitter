@@ -1,15 +1,15 @@
 module.exports = reemit
 module.exports.filter = filter
 
-var EventEmitter = require('events').EventEmitter
+const EventEmitter = require('events').EventEmitter
 
 function reemit (source, target, events) {
   if (!Array.isArray(events)) events = [events]
 
-  var listeners = []
+  const listeners = []
   events.forEach(function (event) {
-    var listener = function () {
-      var args = [].slice.call(arguments)
+    const listener = function () {
+      const args = [].slice.call(arguments)
       args.unshift(event)
       target.emit.apply(target, args)
     }
@@ -25,7 +25,7 @@ function reemit (source, target, events) {
 }
 
 function filter (source, events) {
-  var emitter = new EventEmitter()
+  const emitter = new EventEmitter()
   reemit(source, emitter, events)
   return emitter
 }
