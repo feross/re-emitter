@@ -20,7 +20,7 @@
   "dependencies": {},
   "devDependencies": {
     "standard": "*",
-    "tape": "^4.10.2"
+    "tape": "^5.0.0"
   },
   "homepage": "https://github.com/feross/re-emitter",
   "keywords": [
